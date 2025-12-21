@@ -9,12 +9,12 @@ import json
 import os
 from typing import Any
 
-import dspy
 import polars as pl
 from dotenv import load_dotenv
 from dspy.adapters.baml_adapter import BAMLAdapter  # noqa: E402
-
 from schema import InsuranceClaim
+
+import dspy
 
 load_dotenv()
 

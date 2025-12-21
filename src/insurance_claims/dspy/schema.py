@@ -3,17 +3,22 @@
 # This file has been modified from its original version to be less strict, so as to allow for partial extractions.
 # Original code can be found here: https://github.com/cleanlab/structured-output-benchmark
 
-from pydantic import BaseModel, Field
-from typing import List, Optional, Literal
 from datetime import date
+from typing import List, Literal, Optional
+
+from pydantic import BaseModel, Field
 
 
 class ClaimHeader(BaseModel):
     claim_id: str | None = Field(
         ..., description="Claim ID in format CLM-XXXXXX, where X is a digit"
     )
-    report_date: date | None = Field(..., description="Date claim was reported in YYYY-MM-DD format")
-    incident_date: date | None = Field(..., description="Date incident occurred in YYYY-MM-DD format")
+    report_date: date | None = Field(
+        ..., description="Date claim was reported in YYYY-MM-DD format"
+    )
+    incident_date: date | None = Field(
+        ..., description="Date incident occurred in YYYY-MM-DD format"
+    )
     reported_by: str | None = Field(
         ..., min_length=1, description="Full name of person reporting claim"
     )
@@ -29,11 +34,15 @@ class PolicyDetails(BaseModel):
     policyholder_name: str | None = Field(
         ..., min_length=1, description="Full legal name on policy"
     )
-    coverage_type: Literal[
-        "Property", "Auto", "Liability", "Health", "Travel", "Other"
-    ] | None = Field(..., description="Type of insurance coverage")
-    effective_date: date | None = Field(..., description="Policy effective start date in YYYY-MM-DD format")
-    expiration_date: date | None = Field(..., description="Policy expiration end date in YYYY-MM-DD format")
+    coverage_type: Literal["Property", "Auto", "Liability", "Health", "Travel", "Other"] | None = (
+        Field(..., description="Type of insurance coverage")
+    )
+    effective_date: date | None = Field(
+        ..., description="Policy effective start date in YYYY-MM-DD format"
+    )
+    expiration_date: date | None = Field(
+        ..., description="Policy expiration end date in YYYY-MM-DD format"
+    )
 
 
 class InsuredObject(BaseModel):
@@ -48,9 +57,7 @@ class InsuredObject(BaseModel):
         None,
         description="Make and model for vehicles (use standardtized manufacturer names and models), or building type for property",
     )
-    year: Optional[int] = Field(
-        None, description="Year for vehicles or year built for buildings"
-    )
+    year: Optional[int] = Field(None, description="Year for vehicles or year built for buildings")
     location_address: Optional[str] = Field(
         None,
         description="Full street address where object is located or originated from",
@@ -110,4 +117,3 @@ class InsuranceClaim(BaseModel):
     incident_description: IncidentDescription | None = Field(
         ..., description="Structured incident details"
     )
-    

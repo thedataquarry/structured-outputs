@@ -11,10 +11,9 @@ from typing import Any, Literal
 
 import dspy
 import polars as pl
+from baml_adapter import BAMLAdapter
 from dotenv import load_dotenv
 from pydantic import BaseModel, Field
-
-from baml_adapter import BAMLAdapter
 
 load_dotenv()
 

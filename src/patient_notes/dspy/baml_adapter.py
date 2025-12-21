@@ -183,6 +183,7 @@ class BAMLAdapter(JSONAdapter):
     # PatientDetails(name='John Doe', age=45, address=PatientAddress(street='123 Main St', city='Anytown', country='US'))
     ```
     """
+
     def format_field_structure(self, signature: type[Signature]) -> str:
         """Overrides the base method to generate a simplified schema for Pydantic models."""
 

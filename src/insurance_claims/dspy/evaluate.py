@@ -6,7 +6,6 @@ from pathlib import Path
 from typing import Any, Dict, List, Tuple
 
 import polars as pl
-
 from utils import calculate_field_breakdown, normalize_claim_record
 
 
@@ -79,9 +78,7 @@ def load_and_match_records(gold_path: Path, result_path: Path) -> List[Tuple[Dic
     for gold_record in gold_data:
         gold_id = gold_record.get("record_id")
         if gold_id in result_lookup:
-            matched_pairs.append(
-                (normalize_claim_record(gold_record), result_lookup[gold_id])
-            )
+            matched_pairs.append((normalize_claim_record(gold_record), result_lookup[gold_id]))
 
     return matched_pairs
 

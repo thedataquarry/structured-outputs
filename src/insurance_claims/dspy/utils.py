@@ -1,4 +1,3 @@
-
 # Copyright Cleanlab.ai
 # SPDX-License-Identifier: Apache-2.0
 # Original code can be found here: https://github.com/cleanlab/structured-output-benchmark
@@ -99,9 +98,7 @@ def load_and_match_records(gold_path: Path, result_path: Path) -> List[Tuple[Dic
     for gold_record in gold_data:
         gold_id = gold_record.get("record_id")
         if gold_id in result_lookup:
-            matched_pairs.append(
-                (normalize_claim_record(gold_record), result_lookup[gold_id])
-            )
+            matched_pairs.append((normalize_claim_record(gold_record), result_lookup[gold_id]))
 
     return matched_pairs
 
@@ -242,9 +239,7 @@ def _compare_claims_detailed(ground_truth, extracted):
         total_fields += policy_results["total_fields"]
     else:
         if extracted.get("policy_details"):
-            errors.append(
-                "policy_details: Extracted policy details when none should exist"
-            )
+            errors.append("policy_details: Extracted policy details when none should exist")
             field_accuracies["policy_details"] = 0.0
             # Mark all extracted policy detail fields as incorrect
             for field in extracted.get("policy_details", {}).keys():
@@ -338,9 +333,7 @@ def _compare_section_detailed(ground_truth, extracted, section_name, errors):
         if is_correct:
             exact_matches += 1
         else:
-            errors.append(
-                f"{field_path}: Expected '{gt_value}', got '{extracted_value}'"
-            )
+            errors.append(f"{field_path}: Expected '{gt_value}', got '{extracted_value}'")
 
     accuracy = exact_matches / total_fields if total_fields > 0 else 1.0
     return {
@@ -405,9 +398,7 @@ def _compare_insured_objects_detailed(ground_truth, extracted, errors):
             # No matching object found, mark all fields as incorrect
             for field in gt_obj.keys():
                 field_correctness[f"insured_objects[{gt_idx}].{field}"] = False
-            errors.append(
-                f"insured_objects[{gt_idx}]: No suitable matching object found"
-            )
+            errors.append(f"insured_objects[{gt_idx}]: No suitable matching object found")
 
     # Check for extra extracted objects not used in optimal pairing
     used_extracted_indices = set(idx for idx in optimal_pairing if idx is not None)
@@ -451,9 +442,7 @@ def _exhaustive_optimal_pairing(ground_truth, extracted):
         if num_matched == 0:
             # Try the empty assignment (no matches)
             score = 0.0  # No matches means score of 0
-            if (
-                score >= best_score
-            ):  # Use >= to prefer fewer assignments when scores are equal
+            if score >= best_score:  # Use >= to prefer fewer assignments when scores are equal
                 best_score = score
                 best_pairing = [None] * n_gt
             continue
