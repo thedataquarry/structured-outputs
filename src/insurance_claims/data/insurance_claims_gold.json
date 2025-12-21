@@ -1,0 +1,933 @@
+[
+  {
+    "header": {
+      "claim_id": "CLM-424063",
+      "report_date": "2024-04-22",
+      "incident_date": "2024-04-22",
+      "reported_by": "Jennifer Garcia",
+      "channel": "Email"
+    },
+    "policy_details": {
+      "policy_number": "POL-787532354",
+      "policyholder_name": "Jennifer Garcia",
+      "coverage_type": "Property",
+      "effective_date": "2023-12-20",
+      "expiration_date": "2024-06-30"
+    },
+    "insured_objects": [
+      {
+        "object_id": "PROP-656048",
+        "object_type": "Building",
+        "make_model": "Single Family Home",
+        "year": 1972,
+        "location_address": "6650 Broadway, Georgetown",
+        "estimated_value": null
+      }
+    ],
+    "incident_description": {
+      "incident_type": "vandalism",
+      "location_type": "residence_exterior",
+      "estimated_damage_amount": 5834,
+      "police_report_number": "PR-20250822-4864"
+    },
+    "record_id": 1
+  },
+  {
+    "header": {
+      "claim_id": "CLM-748422",
+      "report_date": "2025-08-22",
+      "incident_date": "2025-08-21",
+      "reported_by": "Michael Miller",
+      "channel": "In-Person"
+    },
+    "policy_details": {
+      "policy_number": "POL-930881789",
+      "policyholder_name": "Michael Miller",
+      "coverage_type": "Property",
+      "effective_date": "2024-03-03",
+      "expiration_date": "2026-03-02"
+    },
+    "insured_objects": [
+      {
+        "object_id": "PROP-199807",
+        "object_type": "Building",
+        "make_model": "Townhouse",
+        "year": 2014,
+        "location_address": "2850 Main St, Lexington",
+        "estimated_value": null
+      }
+    ],
+    "incident_description": {
+      "incident_type": "vandalism",
+      "location_type": "commercial_property",
+      "estimated_damage_amount": 9415,
+      "police_report_number": null
+    },
+    "record_id": 2
+  },
+  {
+    "header": {
+      "claim_id": "CLM-255335",
+      "report_date": "2025-08-20",
+      "incident_date": "2025-08-20",
+      "reported_by": "David Taylor",
+      "channel": "In-Person"
+    },
+    "policy_details": null,
+    "insured_objects": null,
+    "incident_description": {
+      "incident_type": "product_liability",
+      "location_type": "commercial_property",
+      "estimated_damage_amount": 423312,
+      "police_report_number": null
+    },
+    "record_id": 3
+  },
+  {
+    "header": {
+      "claim_id": "CLM-988147",
+      "report_date": "2025-08-30",
+      "incident_date": "2025-08-30",
+      "reported_by": "Jennifer Johnson",
+      "channel": "Portal"
+    },
+    "policy_details": {
+      "policy_number": "POL-467268181",
+      "policyholder_name": "Jennifer Johnson",
+      "coverage_type": "Auto",
+      "effective_date": "2023-11-19",
+      "expiration_date": "2025-05-31"
+    },
+    "insured_objects": [
+      {
+        "object_id": "VIN95384130612982136",
+        "object_type": "Vehicle",
+        "make_model": "BMW X3",
+        "year": 2017,
+        "location_address": null,
+        "estimated_value": 15265
+      },
+      {
+        "object_id": "VIN19157663903019200",
+        "object_type": "Vehicle",
+        "make_model": "Mercedes GLC",
+        "year": 2019,
+        "location_address": null,
+        "estimated_value": 20372
+      }
+    ],
+    "incident_description": {
+      "incident_type": "side_impact_collision",
+      "location_type": "parking_lot",
+      "estimated_damage_amount": 22631,
+      "police_report_number": "PR-20250830-7127"
+    },
+    "record_id": 4
+  },
+  {
+    "header": {
+      "claim_id": "CLM-597471",
+      "report_date": "2025-08-22",
+      "incident_date": "2025-08-21",
+      "reported_by": "Ashley Rodriguez",
+      "channel": "Portal"
+    },
+    "policy_details": {
+      "policy_number": "POL-998781390",
+      "policyholder_name": "Ashley Rodriguez",
+      "coverage_type": "Property",
+      "effective_date": "2024-04-18",
+      "expiration_date": "2025-10-16"
+    },
+    "insured_objects": [
+      {
+        "object_id": null,
+        "object_type": "Building",
+        "make_model": "Single Family Home",
+        "year": 1959,
+        "location_address": "7400 Pine Rd, Arlington",
+        "estimated_value": null
+      }
+    ],
+    "incident_description": {
+      "incident_type": "kitchen_fire",
+      "location_type": "residence_interior",
+      "estimated_damage_amount": 52774,
+      "police_report_number": null
+    },
+    "record_id": 5
+  },
+  {
+    "header": {
+      "claim_id": "CLM-509317",
+      "report_date": "2025-09-04",
+      "incident_date": "2025-09-01",
+      "reported_by": "Jennifer Davis",
+      "channel": "Email"
+    },
+    "policy_details": {
+      "policy_number": "POL-756977389",
+      "policyholder_name": "Jennifer Davis",
+      "coverage_type": "Liability",
+      "effective_date": "2023-11-14",
+      "expiration_date": "2026-05-13"
+    },
+    "insured_objects": [
+      {
+        "object_id": null,
+        "object_type": "Building",
+        "make_model": "Residential Property",
+        "year": 2010,
+        "location_address": "9350 Broadway, Springfield",
+        "estimated_value": 463611
+      }
+    ],
+    "incident_description": {
+      "incident_type": "slip_and_fall",
+      "location_type": "residence_exterior",
+      "estimated_damage_amount": 21040,
+      "police_report_number": null
+    },
+    "record_id": 6
+  },
+  {
+    "header": {
+      "claim_id": "CLM-860535",
+      "report_date": "2025-09-03",
+      "incident_date": "2025-09-02",
+      "reported_by": "Robert Thompson",
+      "channel": "In-Person"
+    },
+    "policy_details": {
+      "policy_number": "POL-694961021",
+      "policyholder_name": "Robert Thompson",
+      "coverage_type": "Property",
+      "effective_date": "2024-03-28",
+      "expiration_date": "2026-03-27"
+    },
+    "insured_objects": [
+      {
+        "object_id": "PROP-635143",
+        "object_type": "Building",
+        "make_model": "Townhouse",
+        "year": 1996,
+        "location_address": "3150 Cedar Lane",
+        "estimated_value": 720992
+      }
+    ],
+    "incident_description": {
+      "incident_type": "burst_pipe_flood",
+      "location_type": "residence_interior",
+      "estimated_damage_amount": 19400,
+      "police_report_number": null
+    },
+    "record_id": 7
+  },
+  {
+    "header": {
+      "claim_id": "CLM-699674",
+      "report_date": "2025-08-30",
+      "incident_date": "2025-08-28",
+      "reported_by": "David Johnson",
+      "channel": "Phone"
+    },
+    "policy_details": {
+      "policy_number": "POL-314055462",
+      "policyholder_name": "David Johnson",
+      "coverage_type": "Liability",
+      "effective_date": "2025-05-27",
+      "expiration_date": "2027-05-26"
+    },
+    "insured_objects": [
+      {
+        "object_id": null,
+        "object_type": "Building",
+        "make_model": "Residential Property",
+        "year": 1969,
+        "location_address": "9600 Church Street, Georgetown",
+        "estimated_value": 372760
+      }
+    ],
+    "incident_description": {
+      "incident_type": "slip_and_fall",
+      "location_type": "residence_exterior",
+      "estimated_damage_amount": null,
+      "police_report_number": null
+    },
+    "record_id": 8
+  },
+  {
+    "header": {
+      "claim_id": "CLM-531517",
+      "report_date": "2025-08-22",
+      "incident_date": "2025-08-22",
+      "reported_by": "David Davis",
+      "channel": "Phone"
+    },
+    "policy_details": null,
+    "insured_objects": null,
+    "incident_description": {
+      "incident_type": "property_injury",
+      "location_type": "commercial_property",
+      "estimated_damage_amount": null,
+      "police_report_number": "PR-20250822-6127"
+    },
+    "record_id": 9
+  },
+  {
+    "header": {
+      "claim_id": "CLM-692408",
+      "report_date": "2025-08-19",
+      "incident_date": "2025-08-17",
+      "reported_by": "Lisa Garcia",
+      "channel": "Phone"
+    },
+    "policy_details": {
+      "policy_number": "POL-575631637",
+      "policyholder_name": "William Garcia",
+      "coverage_type": "Auto",
+      "effective_date": "2024-03-07",
+      "expiration_date": "2026-03-06"
+    },
+    "insured_objects": [
+      {
+        "object_id": null,
+        "object_type": "Vehicle",
+        "make_model": "Ford Escape",
+        "year": 2017,
+        "location_address": null,
+        "estimated_value": 16433
+      }
+    ],
+    "incident_description": {
+      "incident_type": "rear_end_collision",
+      "location_type": "residential_street",
+      "estimated_damage_amount": 2776,
+      "police_report_number": "PR-20250817-9170"
+    },
+    "record_id": 10
+  },
+  {
+    "header": {
+      "claim_id": "CLM-884860",
+      "report_date": "2025-09-04",
+      "incident_date": "2025-09-02",
+      "reported_by": "Michelle Brown",
+      "channel": "Email"
+    },
+    "policy_details": null,
+    "insured_objects": null,
+    "incident_description": {
+      "incident_type": "theft_burglary",
+      "location_type": "commercial_property",
+      "estimated_damage_amount": 15672,
+      "police_report_number": "PR-20250902-7037"
+    },
+    "record_id": 11
+  },
+  {
+    "header": {
+      "claim_id": "CLM-462584",
+      "report_date": "2025-08-26",
+      "incident_date": "2025-08-25",
+      "reported_by": "James Johnson",
+      "channel": "Email"
+    },
+    "policy_details": null,
+    "insured_objects": null,
+    "incident_description": {
+      "incident_type": "rear_end_collision",
+      "location_type": "parking_lot",
+      "estimated_damage_amount": 3038,
+      "police_report_number": null
+    },
+    "record_id": 12
+  },
+  {
+    "header": {
+      "claim_id": "CLM-834090",
+      "report_date": "2025-09-09",
+      "incident_date": "2025-09-09",
+      "reported_by": "Christopher Smith",
+      "channel": "Phone"
+    },
+    "policy_details": {
+      "policy_number": "POL-262724604",
+      "policyholder_name": "Christopher Smith",
+      "coverage_type": "Property",
+      "effective_date": "2024-05-01",
+      "expiration_date": "2025-10-29"
+    },
+    "insured_objects": [
+      {
+        "object_id": null,
+        "object_type": "Building",
+        "make_model": "Townhouse",
+        "year": 2023,
+        "location_address": "7050 Oak Ave, Arlington",
+        "estimated_value": 392607
+      }
+    ],
+    "incident_description": {
+      "incident_type": "storm_damage",
+      "location_type": "residence_exterior",
+      "estimated_damage_amount": 28390,
+      "police_report_number": null
+    },
+    "record_id": 13
+  },
+  {
+    "header": {
+      "claim_id": "CLM-696349",
+      "report_date": "2025-09-05",
+      "incident_date": "2025-09-04",
+      "reported_by": "Jennifer Miller",
+      "channel": "Phone"
+    },
+    "policy_details": {
+      "policy_number": "POL-285003271",
+      "policyholder_name": "Jennifer Miller",
+      "coverage_type": "Property",
+      "effective_date": "2024-12-13",
+      "expiration_date": "2026-12-12"
+    },
+    "insured_objects": [
+      {
+        "object_id": null,
+        "object_type": "Building",
+        "make_model": "Single Family Home",
+        "year": 2013,
+        "location_address": "7400 Second Street, Clayton",
+        "estimated_value": 411865
+      }
+    ],
+    "incident_description": {
+      "incident_type": "electrical_fire",
+      "location_type": "residence_interior",
+      "estimated_damage_amount": 136734,
+      "police_report_number": null
+    },
+    "record_id": 14
+  },
+  {
+    "header": {
+      "claim_id": "CLM-405338",
+      "report_date": "2025-08-16",
+      "incident_date": "2025-08-15",
+      "reported_by": "James Smith",
+      "channel": "Portal"
+    },
+    "policy_details": {
+      "policy_number": "POL-932318703",
+      "policyholder_name": "James Smith",
+      "coverage_type": "Auto",
+      "effective_date": "2024-09-25",
+      "expiration_date": "2025-09-25"
+    },
+    "insured_objects": [
+      {
+        "object_id": "VIN70413800966102220",
+        "object_type": "Vehicle",
+        "make_model": "Honda CR-V",
+        "year": 2017,
+        "location_address": null,
+        "estimated_value": null
+      }
+    ],
+    "incident_description": {
+      "incident_type": "head_on_collision",
+      "location_type": "highway",
+      "estimated_damage_amount": 37098,
+      "police_report_number": null
+    },
+    "record_id": 15
+  },
+  {
+    "header": {
+      "claim_id": "CLM-741209",
+      "report_date": "2025-09-10",
+      "incident_date": "2025-09-08",
+      "reported_by": "Karen Wilson",
+      "channel": "Phone"
+    },
+    "policy_details": {
+      "policy_number": "POL-811390245",
+      "policyholder_name": "Karen Wilson",
+      "coverage_type": "Auto",
+      "effective_date": "2024-07-15",
+      "expiration_date": "2025-07-14"
+    },
+    "insured_objects": [
+      {
+        "object_id": "VIN29384756109283745",
+        "object_type": "Vehicle",
+        "make_model": "Toyota Camry",
+        "year": 2018,
+        "location_address": null,
+        "estimated_value": 14000
+      }
+    ],
+    "incident_description": {
+      "incident_type": "rear_end_collision",
+      "location_type": "intersection",
+      "estimated_damage_amount": 4821,
+      "police_report_number": "PR-20250908-1289"
+    },
+    "record_id": 16
+  },
+  {
+    "header": {
+      "claim_id": "CLM-512907",
+      "report_date": "2025-09-11",
+      "incident_date": "2025-09-09",
+      "reported_by": "Anthony Martinez",
+      "channel": "Portal"
+    },
+    "policy_details": {
+      "policy_number": "POL-220941678",
+      "policyholder_name": "Anthony Martinez",
+      "coverage_type": "Property",
+      "effective_date": "2023-05-01",
+      "expiration_date": "2025-04-30"
+    },
+    "insured_objects": [
+      {
+        "object_id": "PROP-819304",
+        "object_type": "Building",
+        "make_model": "Single Family Home",
+        "year": 1985,
+        "location_address": "8120 Lakeview Drive, Dayton",
+        "estimated_value": 356000
+      }
+    ],
+    "incident_description": {
+      "incident_type": "storm_damage",
+      "location_type": "residence_exterior",
+      "estimated_damage_amount": 18742,
+      "police_report_number": "PR-20250909-4432"
+    },
+    "record_id": 17
+  },
+  {
+    "header": {
+      "claim_id": "CLM-624817",
+      "report_date": "2025-09-12",
+      "incident_date": "2025-09-11",
+      "reported_by": "Stephanie Clark",
+      "channel": "Email"
+    },
+    "policy_details": {
+      "policy_number": "POL-573882014",
+      "policyholder_name": "Stephanie Clark",
+      "coverage_type": "Auto",
+      "effective_date": "2024-10-01",
+      "expiration_date": "2025-09-30"
+    },
+    "insured_objects": [
+      {
+        "object_id": "VIN12039485762194836",
+        "object_type": "Vehicle",
+        "make_model": "Honda Accord",
+        "year": 2020,
+        "location_address": null,
+        "estimated_value": 19500
+      }
+    ],
+    "incident_description": {
+      "incident_type": "parking_lot_collision",
+      "location_type": "parking_lot",
+      "estimated_damage_amount": 3172,
+      "police_report_number": "PR-20250911-9821"
+    },
+    "record_id": 18
+  },
+  {
+    "header": {
+      "claim_id": "CLM-205311",
+      "report_date": "2025-09-13",
+      "incident_date": "2025-09-12",
+      "reported_by": "Brian Lewis",
+      "channel": "Phone"
+    },
+    "policy_details": {
+      "policy_number": "POL-455372900",
+      "policyholder_name": "Brian Lewis",
+      "coverage_type": "Property",
+      "effective_date": "2023-06-10",
+      "expiration_date": "2026-06-09"
+    },
+    "insured_objects": [
+      {
+        "object_id": null,
+        "object_type": "Building",
+        "make_model": "Townhouse",
+        "year": 1978,
+        "location_address": "441 Oakwood Avenue, Buffalo",
+        "estimated_value": 389000
+      }
+    ],
+    "incident_description": {
+      "incident_type": "burst_pipe_flood",
+      "location_type": "residence_interior",
+      "estimated_damage_amount": 12187,
+      "police_report_number": null
+    },
+    "record_id": 19
+  },
+  {
+    "header": {
+      "claim_id": "CLM-930672",
+      "report_date": "2025-09-14",
+      "incident_date": "2025-09-13",
+      "reported_by": "Olivia White",
+      "channel": "In-Person"
+    },
+    "policy_details": {
+      "policy_number": "POL-668299345",
+      "policyholder_name": "Olivia White",
+      "coverage_type": "Liability",
+      "effective_date": "2024-01-20",
+      "expiration_date": "2026-01-19"
+    },
+    "insured_objects": [
+      {
+        "object_id": "LIAB-982311",
+        "object_type": "Building",
+        "make_model": "Commercial Office",
+        "year": 2005,
+        "location_address": "300 Market Street, Albany",
+        "estimated_value": 742500
+      }
+    ],
+    "incident_description": {
+      "incident_type": "slip_and_fall",
+      "location_type": "commercial_property",
+      "estimated_damage_amount": 8860,
+      "police_report_number": "PR-20250913-5507"
+    },
+    "record_id": 20
+  },
+  {
+    "header": {
+      "claim_id": "CLM-144512",
+      "report_date": "2025-09-15",
+      "incident_date": "2025-09-13",
+      "reported_by": "Daniel Evans",
+      "channel": "Portal"
+    },
+    "policy_details": {
+      "policy_number": "POL-391047522",
+      "policyholder_name": "Daniel Evans",
+      "coverage_type": "Auto",
+      "effective_date": "2024-02-10",
+      "expiration_date": "2027-02-09"
+    },
+    "insured_objects": [
+      {
+        "object_id": "VIN84930271645092834",
+        "object_type": "Vehicle",
+        "make_model": "Ford F-150",
+        "year": 2021,
+        "location_address": null,
+        "estimated_value": 28400
+      }
+    ],
+    "incident_description": {
+      "incident_type": "side_impact_collision",
+      "location_type": "intersection",
+      "estimated_damage_amount": 10322,
+      "police_report_number": "PR-20250913-3344"
+    },
+    "record_id": 21
+  },
+  {
+    "header": {
+      "claim_id": "CLM-772093",
+      "report_date": "2025-09-16",
+      "incident_date": "2025-09-15",
+      "reported_by": "Laura Adams",
+      "channel": "Email"
+    },
+    "policy_details": {
+      "policy_number": "POL-119384756",
+      "policyholder_name": "Laura Adams",
+      "coverage_type": "Auto",
+      "effective_date": "2023-11-05",
+      "expiration_date": "2025-11-04"
+    },
+    "insured_objects": [
+      {
+        "object_id": "VIN98123746509283746",
+        "object_type": "Vehicle",
+        "make_model": "Subaru Outback",
+        "year": 2019,
+        "location_address": null,
+        "estimated_value": 17350
+      },
+      {
+        "object_id": "VIN29384756109283744",
+        "object_type": "Vehicle",
+        "make_model": "Toyota Corolla",
+        "year": 2017,
+        "location_address": null,
+        "estimated_value": 11200
+      }
+    ],
+    "incident_description": {
+      "incident_type": "rear_end_collision",
+      "location_type": "highway",
+      "estimated_damage_amount": 6321,
+      "police_report_number": "PR-20250915-4419"
+    },
+    "record_id": 22
+  },
+  {
+    "header": {
+      "claim_id": "CLM-390871",
+      "report_date": "2025-09-17",
+      "incident_date": "2025-09-14",
+      "reported_by": "Ethan Walker",
+      "channel": "In-Person"
+    },
+    "policy_details": {
+      "policy_number": "POL-702193847",
+      "policyholder_name": "Ethan Walker",
+      "coverage_type": "Property",
+      "effective_date": "2024-08-01",
+      "expiration_date": "2025-07-31"
+    },
+    "insured_objects": [
+      {
+        "object_id": null,
+        "object_type": "Building",
+        "make_model": "Single Family Home",
+        "year": 1992,
+        "location_address": "1920 Pinecrest Ln, Toledo, OH",
+        "estimated_value": 268900
+      }
+    ],
+    "incident_description": {
+      "incident_type": "kitchen_fire",
+      "location_type": "residence_interior",
+      "estimated_damage_amount": 44215,
+      "police_report_number": "PR-20250914-2291"
+    },
+    "record_id": 23
+  },
+  {
+    "header": {
+      "claim_id": "CLM-551092",
+      "report_date": "2025-09-18",
+      "incident_date": "2025-09-16",
+      "reported_by": "Rachel Green",
+      "channel": "Phone"
+    },
+    "policy_details": {
+      "policy_number": "POL-509238176",
+      "policyholder_name": "Rachel Green",
+      "coverage_type": "Property",
+      "effective_date": "2024-05-12",
+      "expiration_date": "2026-05-11"
+    },
+    "insured_objects": [
+      {
+        "object_id": null,
+        "object_type": "Building",
+        "make_model": "Townhouse",
+        "year": 2008,
+        "location_address": "621 Brookside Ct, Madison",
+        "estimated_value": 314000
+      }
+    ],
+    "incident_description": {
+      "incident_type": "roof_leak",
+      "location_type": "residence_interior",
+      "estimated_damage_amount": 8237,
+      "police_report_number": null
+    },
+    "record_id": 24
+  },
+  {
+    "header": {
+      "claim_id": "CLM-229871",
+      "report_date": "2025-09-20",
+      "incident_date": "2025-09-18",
+      "reported_by": "Olivia Carter",
+      "channel": "Email"
+    },
+    "policy_details": {
+      "policy_number": "POL-667198234",
+      "policyholder_name": "Olivia Carter",
+      "coverage_type": "Auto",
+      "effective_date": "2024-10-10",
+      "expiration_date": "2025-10-09"
+    },
+    "insured_objects": [
+      {
+        "object_id": "VIN77889900112233445",
+        "object_type": "Vehicle",
+        "make_model": "Mazda CX-5",
+        "year": 2020,
+        "location_address": null,
+        "estimated_value": 15600
+      }
+    ],
+    "incident_description": {
+      "incident_type": "side_impact_collision",
+      "location_type": "intersection",
+      "estimated_damage_amount": 7800,
+      "police_report_number": "PR-20250918-8821"
+    },
+    "record_id": 25
+  },
+  {
+    "header": {
+      "claim_id": null,
+      "report_date": "2025-09-21",
+      "incident_date": "2025-09-20",
+      "reported_by": "Mark Evans",
+      "channel": "Phone"
+    },
+    "policy_details": null,
+    "insured_objects": null,
+    "incident_description": {
+      "incident_type": "slip_and_fall",
+      "location_type": "commercial_property",
+      "estimated_damage_amount": null,
+      "police_report_number": null
+    },
+    "record_id": 26
+  },
+  {
+    "header": {
+      "claim_id": "CLM-320198",
+      "report_date": "2025-09-21",
+      "incident_date": "2025-09-20",
+      "reported_by": "Susan Lee",
+      "channel": "Email"
+    },
+    "policy_details": {
+      "policy_number": "POL-481992330",
+      "policyholder_name": "Susan Lee",
+      "coverage_type": "Auto",
+      "effective_date": "2024-09-22",
+      "expiration_date": "2025-09-21"
+    },
+    "insured_objects": [
+      {
+        "object_id": "VIN88776655443322110",
+        "object_type": "Vehicle",
+        "make_model": "Subaru Outback",
+        "year": 2015,
+        "location_address": null,
+        "estimated_value": null
+      }
+    ],
+    "incident_description": {
+      "incident_type": "parking_lot_collision",
+      "location_type": "parking_lot",
+      "estimated_damage_amount": 2100,
+      "police_report_number": null
+    },
+    "record_id": 27
+  },
+  {
+    "header": {
+      "claim_id": "CLM-440882",
+      "report_date": "2025-09-22",
+      "incident_date": "2025-09-21",
+      "reported_by": "George Clark",
+      "channel": "Phone"
+    },
+    "policy_details": {
+      "policy_number": "POL-998734221",
+      "policyholder_name": "George Clark",
+      "coverage_type": "Auto",
+      "effective_date": "2024-11-15",
+      "expiration_date": "2025-11-14"
+    },
+    "insured_objects": [
+      {
+        "object_id": null,
+        "object_type": "Vehicle",
+        "make_model": null,
+        "year": 1999,
+        "location_address": null,
+        "estimated_value": null
+      }
+    ],
+    "incident_description": {
+      "incident_type": "rear_end_collision",
+      "location_type": "residential_street",
+      "estimated_damage_amount": null,
+      "police_report_number": "PR-20250921-2234"
+    },
+    "record_id": 28
+  },
+  {
+    "header": {
+      "claim_id": "CLM-773011",
+      "report_date": "2025-09-19",
+      "incident_date": "2025-09-17",
+      "reported_by": "Patricia Adams",
+      "channel": "In-Person"
+    },
+    "policy_details": {
+      "policy_number": "POL-554321090",
+      "policyholder_name": "Patricia Adams",
+      "coverage_type": "Property",
+      "effective_date": "2024-02-01",
+      "expiration_date": "2025-01-31"
+    },
+    "insured_objects": [
+      {
+        "object_id": "PROP-223190",
+        "object_type": "Building",
+        "make_model": "Single Family Home",
+        "year": 1975,
+        "location_address": "4501 Ashwood Dr, Salem",
+        "estimated_value": 289000
+      }
+    ],
+    "incident_description": {
+      "incident_type": "burst_pipe_flood",
+      "location_type": "residence_interior",
+      "estimated_damage_amount": 13240,
+      "police_report_number": null
+    },
+    "record_id": 29
+  },
+  {
+    "header": {
+      "claim_id": "CLM-664028",
+      "report_date": "2025-09-23",
+      "incident_date": "2025-09-22",
+      "reported_by": "Emily Johnson",
+      "channel": "Portal"
+    },
+    "policy_details": {
+      "policy_number": "POL-776542109",
+      "policyholder_name": "Emily Johnson",
+      "coverage_type": "Liability",
+      "effective_date": "2023-06-10",
+      "expiration_date": "2026-06-09"
+    },
+    "insured_objects": [
+      {
+        "object_id": null,
+        "object_type": "Building",
+        "make_model": "Retail Shop",
+        "year": 2011,
+        "location_address": "9900 Commerce Blvd",
+        "estimated_value": 502000
+      }
+    ],
+    "incident_description": {
+      "incident_type": "slip_and_fall",
+      "location_type": "commercial_property",
+      "estimated_damage_amount": 14500,
+      "police_report_number": null
+    },
+    "record_id": 30
+  }
+]
