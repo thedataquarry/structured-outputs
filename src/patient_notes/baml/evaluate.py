@@ -490,14 +490,14 @@ if __name__ == "__main__":
         "--gold",
         "-g",
         type=str,
-        default="../../data/gold.json",
+        default="../data/gold.json",
         help="Path to the gold standard file",
     )
     parser.add_argument(
         "--output",
         "-o",
         type=str,
-        default="../../data/structured_output_dspy.json",
+        default="../data/structured_output_baml.json",
         help="Path to the results file",
     )
     args = parser.parse_args()

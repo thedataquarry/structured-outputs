@@ -1,6 +1,6 @@
 # DSPy for structured outputs
 
-This section contains code for getting structured outputs using DSPy.
+This section contains code for getting structured outputs using DSPy with `BAMLAdapter`.
 
 ## Usage
 

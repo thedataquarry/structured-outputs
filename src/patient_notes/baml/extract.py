@@ -122,14 +122,14 @@ if __name__ == "__main__":
         "--fname",
         "-f",
         type=str,
-        default="../../data/note.json",
+        default="../data/note.json",
         help="Input file name",
     )
     parser.add_argument(
         "--output",
         "-o",
         type=str,
-        default="../../data/structured_output_baml.json",
+        default="../data/structured_output_baml.json",
         help="Output file name",
     )
     args = parser.parse_args()

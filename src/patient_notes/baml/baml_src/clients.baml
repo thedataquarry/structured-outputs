@@ -8,8 +8,8 @@ client<llm> OpenRouterGPT4oMini {
     model "openai/gpt-4o-mini"
     temperature 0.0
     headers {
-      "HTTP-Referer" "https://kuzudb.com" // Optional
-      "X-Title" "Graph RAG" // Optional
+      "HTTP-Referer" "https://thedataquarry.com" // Optional
+      "X-Title" "Structured Outputs" // Optional
     }
   }
 }
@@ -22,8 +22,8 @@ client<llm> OpenRouterGPT41Mini {
     model "openai/gpt-4.1-mini"
     temperature 0.0
     headers {
-      "HTTP-Referer" "https://kuzudb.com" // Optional
-      "X-Title" "Graph RAG" // Optional
+      "HTTP-Referer" "https://thedataquarry.com" // Optional
+      "X-Title" "Structured Outputs" // Optional
     }
   }
 }
@@ -36,8 +36,8 @@ client<llm> OpenRouterGPT41Nano {
     model "openai/gpt-4.1-nano"
     temperature 0.0
     headers {
-      "HTTP-Referer" "https://kuzudb.com" // Optional
-      "X-Title" "Graph RAG" // Optional
+      "HTTP-Referer" "https://thedataquarry.com" // Optional
+      "X-Title" "Structured Outputs" // Optional
     }
   }
 }
@@ -50,8 +50,8 @@ client<llm> OpenRouterGemma3_27b {
     model "google/gemma-3-27b-it"
     temperature 0.0
     headers {
-      "HTTP-Referer" "https://kuzudb.com" // Optional
-      "X-Title" "Graph RAG" // Optional
+      "HTTP-Referer" "https://thedataquarry.com" // Optional
+      "X-Title" "Structured Outputs" // Optional
     }
   }
 }
@@ -64,8 +64,8 @@ client<llm> OpenRouterGemma3_4b {
     model "google/gemma-3-4b-it"
     temperature 0.0
     headers {
-      "HTTP-Referer" "https://kuzudb.com" // Optional
-      "X-Title" "Graph RAG" // Optional
+      "HTTP-Referer" "https://thedataquarry.com" // Optional
+      "X-Title" "Structured Outputs" // Optional
     }
   }
 }
@@ -78,8 +78,8 @@ client<llm> OpenRouterGoogleGemini25Flash {
     model "google/gemini-2.5-flash"
     temperature 0.0
     headers {
-      "HTTP-Referer" "https://kuzudb.com" // Optional
-      "X-Title" "Graph RAG" // Optional
+      "HTTP-Referer" "https://thedataquarry.com" // Optional
+      "X-Title" "Structured Outputs" // Optional
     }
   }
 }
@@ -93,8 +93,8 @@ client<llm> OpenRouterGoogleGemini2Flash {
     model "google/gemini-2.0-flash-001"
     temperature 0.0
     headers {
-      "HTTP-Referer" "https://kuzudb.com" // Optional
-      "X-Title" "Graph RAG" // Optional
+      "HTTP-Referer" "https://thedataquarry.com" // Optional
+      "X-Title" "Structured Outputs" // Optional
     }
   }
 }
@@ -107,8 +107,8 @@ client<llm> OpenRouterMistralDevstralMedium {
     model "mistralai/devstral-medium"
     temperature 0.0
     headers {
-      "HTTP-Referer" "https://kuzudb.com" // Optional
-      "X-Title" "Graph RAG" // Optional
+      "HTTP-Referer" "https://thedataquarry.com" // Optional
+      "X-Title" "Structured Outputs" // Optional
     }
   }
 }

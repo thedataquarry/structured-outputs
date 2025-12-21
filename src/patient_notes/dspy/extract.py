@@ -199,14 +199,14 @@ if __name__ == "__main__":
         "--fname",
         "-f",
         type=str,
-        default="../../data/note.json",
+        default="../data/note.json",
         help="Input file name",
     )
     parser.add_argument(
         "--output_file",
         "-o",
         type=str,
-        default="../../data/structured_output_dspy.json",
+        default="../data/structured_output_dspy.json",
         help="Output file name",
     )
     args = parser.parse_args()
