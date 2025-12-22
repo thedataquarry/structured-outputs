@@ -11,7 +11,7 @@ from typing import Any, Literal
 
 import dspy
 import polars as pl
-from baml_adapter import BAMLAdapter
+from dspy.adapters.baml_adapter import BAMLAdapter
 from dotenv import load_dotenv
 from pydantic import BaseModel, Field
 
@@ -22,7 +22,7 @@ lm = dspy.LM(
     model="openrouter/google/gemini-2.0-flash-001",
     api_base="https://openrouter.ai/api/v1",
     api_key=os.environ["OPENROUTER_API_KEY"],
-    max_tokens=10_000,  # Max output tokens
+    cache=False,
 )
 dspy.configure(lm=lm, adapter=BAMLAdapter())
 
@@ -33,18 +33,18 @@ class PatientNote(BaseModel):
 
 
 class PersonNameAndTitle(BaseModel):
-    family: str | None = Field(default=None, description="surname")
+    family: str | None = Field(default=None, description="Surname of the patient")
     given: list[str] | None = Field(
         default=None,
-        description="Given names (first and middle names)",
+        description="Given name(s) of the patient",
     )
     prefix: str | None = Field(
-        default=None, description="title of the person, e.g., Dr., Mr., Mrs., Ms."
+        default=None, description="Title of the patient"
     )
 
 
 class Address(BaseModel):
-    line: str | None = Field(default=None, alias="street")
+    line: str | None
     city: str | None
     state: str | None
     postalCode: str | None
@@ -60,27 +60,25 @@ class Practitioner(BaseModel):
 
 class Immunization(BaseModel):
     traits: list[str] | None = Field(
-        default=None,
         description="Text describing the name and traits of the immunization",
     )
-    status: Literal["completed"] | None = Field(
-        default=None,
-        description="If no traits are present, then the status cannot be determined",
+    substances: list[str] | None = Field(
+        description="Substances or vaccine components mentioned in the immunization",
     )
-    occurrenceDate: str | None = Field(default=None, description="ISO-8601 format for date")
+    status: Literal["completed"] | None
+    occurrenceDate: str | None = Field(description="ISO-8601 format for datetime including timezone")
 
 
 class Substance(BaseModel):
     category: Literal["environment", "food", "medication", "other"]
     name: str | None
     manifestation: str | None = Field(
-        default=None,
         description="Text describing the manifestation of the allergy or intolerance",
     )
 
 
 class Allergy(BaseModel):
-    substance: list[Substance] = Field(description="Substances the patient is allergic to")
+    substance: list[Substance] | None = Field(description="The substance that the patient is allergic to")
 
 
 class Patient(BaseModel):
@@ -88,84 +86,58 @@ class Patient(BaseModel):
     name: PersonNameAndTitle | None
     age: int | None
     gender: Literal["male", "female"] | None
-    birthDate: str | None = Field(default=None, description="ISO-8601 format for date")
+    birthDate: str | None = Field(description="Date of birth of the patient in ISO-8601 format")
+    address: Address | None = Field(description="Residence address of the patient")
     phone: str | None = Field(default=None, description="Phone number of the patient")
-    email: str | None = Field(default=None, description="Email address of the patient")
+    email: str | None = Field(default=None, description="Phone number of the patient")
     maritalStatus: Literal["Married", "Divorced", "Widowed", "NeverMarried"] | None
-    address: Address | None = Field(default=None, description="Residence address of the patient")
-    allergy: list[Allergy] | None = Field(default=None)
+    primarLanguage: Literal["English", "Spanish"] | None
+    allergy: list[Allergy] | None
 
 
-class PatientInfo(dspy.Signature):
+class PatientRecord(BaseModel):
+    patient: Patient | None
+    practitioner: list[Practitioner] | None
+    immunization: list[Immunization] | None
+
+
+class PatientRecordInfo(dspy.Signature):
     """
+    Extract patient, practitioner, and immunization information from the given note.
     - Do not infer any information that is not explicitly mentioned in the text.
     - If you are unsure about any field, leave it as None.
     """
 
     note: PatientNote = dspy.InputField()
-    patient: Patient = dspy.OutputField()
-
-
-class PractitionerInfo(dspy.Signature):
-    """
-    - Do not infer any information that is not explicitly mentioned in the text.
-    - If you are unsure about any field, leave it as None.
-    """
-
-    note: PatientNote = dspy.InputField()
-    practitioner: list[Practitioner] | None = dspy.OutputField()
-
-
-class ImmunizationInfo(dspy.Signature):
-    """
-    Extracts immunization information from a patient note.
-    """
-
-    note: PatientNote = dspy.InputField(desc="Immunization info only")
-    immunization: list[Immunization] | None = dspy.OutputField()
+    patient_record: PatientRecord = dspy.OutputField()
 
 
 class ExtractData(dspy.Module):
     def __init__(self):
-        self.extract_patient = dspy.Predict(PatientInfo)
-        self.extract_practitioner = dspy.Predict(PractitionerInfo)
-        self.extract_immunization = dspy.Predict(ImmunizationInfo)
+        self.extract_patient_record = dspy.Predict(PatientRecordInfo)
 
     async def aforward(
         self,
         note: dict[str, Any],
     ) -> dict[str, Any]:
-        # Run all extractions concurrently
-        r1, r2, r3 = await asyncio.gather(
-            self.extract_patient.acall(note=note["note"]),
-            self.extract_practitioner.acall(note=note["note"]),
-            self.extract_immunization.acall(note=note["note"]),
-        )
-
-        # Process results
-        r1.patient.record_id = note["record_id"]
-        r1 = r1.patient.model_dump()
-        r2 = [item.model_dump() for item in r2.practitioner] if r2.practitioner else None
-        r3 = [item.model_dump() for item in r3.immunization] if r3.immunization else None
-        # Combine the results into a dictionary
-        result = {"patient": r1, "practitioner": r2, "immunization": r3}
+        record = await self.extract_patient_record.acall(note=note["note"])
+        patient_record = record.patient_record
+        if patient_record and patient_record.patient:
+            patient_record.patient.record_id = note["record_id"]
+        result = patient_record.model_dump() if patient_record else {}
+        result.setdefault("patient", {"record_id": note["record_id"]})
         return result
 
     def forward(
         self,
         note: dict[str, Any],
     ) -> dict[str, Any]:
-        # Append record_id to the result
-        r1 = self.extract_patient(note=note["note"])
-        r1.patient.record_id = note["record_id"]
-        r1 = r1.patient.model_dump()
-
-        r2 = self.extract_practitioner(note=note["note"])
-        r2 = [item.model_dump() for item in r2.practitioner] if r2.practitioner else None
-        r3 = self.extract_immunization(note=note["note"])
-        r3 = [item.model_dump() for item in r3.immunization] if r3.immunization else None
-        # Combine the results into a dictionary
-        result = {"patient": r1, "practitioner": r2, "immunization": r3}
+        record = self.extract_patient_record(note=note["note"])
+        patient_record = record.patient_record
+        if patient_record and patient_record.patient:
+            patient_record.patient.record_id = note["record_id"]
+        result = patient_record.model_dump() if patient_record else {}
+        result.setdefault("patient", {"record_id": note["record_id"]})
         return result
 
 
@@ -193,7 +165,7 @@ async def extract_patients_async(notes: list[dict[str, Any]]) -> list[dict]:
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("--start", "-s", type=int, default=1, help="Start index")
-    parser.add_argument("--end", "-e", type=int, default=10_000, help="End index")
+    parser.add_argument("--end", "-e", type=int, default=100, help="End index")
     parser.add_argument(
         "--fname",
         "-f",

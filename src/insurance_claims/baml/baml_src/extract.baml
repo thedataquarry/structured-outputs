@@ -53,7 +53,7 @@ enum LocationType {
 
 
 class ClaimHeader {
-  claim_id string @description("Claim ID in format CLM-XXXXXX, where X is a digit")
+  claim_id string? @description("Claim ID in format CLM-XXXXXX, where X is a digit")
   report_date string? @description("Date of the report in YYYY-MM-DD format")
   incident_date string? @description("Date incident occurred in YYYY-MM-DD format")
   reported_by string? @description("Full name of person reporting the claim")
@@ -62,7 +62,7 @@ class ClaimHeader {
 
 
 class PolicyDetails {
-  policy_number string @description("Policy number in format POL-XXXXXXXXX, where X is a digit")
+  policy_number string? @description("Policy number in format POL-XXXXXXXXX, where X is a digit")
   policyholder_name string? @description("Full legal name on policy")
   coverage_type CoverageType? @description("Type of insurance coverage")
   effective_date string? @description("Policy effective start date in YYYY-MM-DD format")
@@ -86,7 +86,7 @@ class IncidentDescription {
 }
 
 class InsuranceClaim {
-  header ClaimHeader
+  header ClaimHeader | null
   policy PolicyDetails | null
   insured_objects InsuredObject[] | null
   incident_description IncidentDescription | null
@@ -97,6 +97,7 @@ function ExtractInsuranceClaim(text: string) -> InsuranceClaim {
   client OpenRouterGoogleGemini3Flash
   prompt #"
     Extract the insurance claim information from the following text.
+    - If you are unsure about a field, leave it as null.
 
     {{ ctx.output_format }}
 

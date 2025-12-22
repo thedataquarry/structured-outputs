@@ -24,71 +24,37 @@ REQUEST_DELAY = 0.01  # Delay between individual API calls in seconds
 api_semaphore = asyncio.Semaphore(MAX_CONCURRENT_REQUESTS)
 
 
-async def extract_patient(record: Dict[str, str]) -> Dict[str, Any]:
-    async with api_semaphore:
-        await asyncio.sleep(REQUEST_DELAY)
-        patient = await b.ExtractPatient(record["note"])
-        output = patient.model_dump()
-        # Clean up output
-        output["record_id"] = record["record_id"]
-        output["maritalStatus"] = output["maritalStatus"].value if output["maritalStatus"] else None
-        print(f"✓ Extracted patient details for record {record['record_id']}")
-        return output
-
-
-async def extract_practitioner(record: Dict[str, str]) -> List[Dict[str, Any]]:
-    async with api_semaphore:
-        await asyncio.sleep(REQUEST_DELAY)
-        practitioners = await b.ExtractPractitioner(record["note"])
-        output = [item.model_dump() for item in practitioners]
-        print(f"✓ Extracted practitioner details for record {record['record_id']}")
-        return output
-
-
-async def extract_immunization(record: Dict[str, str]) -> List[Dict[str, Any]]:
-    async with api_semaphore:
-        await asyncio.sleep(REQUEST_DELAY)
-        immunization = await b.ExtractImmunization(record["note"])
-        output = [i.model_dump() for i in immunization]
-        # Add record_id to each immunization entry for safety
-        for item in output:
-            item["record_id"] = record["record_id"]
-        print(f"✓ Extracted immunization for record {record['record_id']}")
-        return output
-
-
 async def process_record(record: Dict[str, str]) -> Dict[str, Any]:
-    # Run all extractions concurrently for the same record
-    tasks = [
-        extract_patient(record),
-        extract_practitioner(record),
-        extract_immunization(record),
-    ]
+    async with api_semaphore:
+        await asyncio.sleep(REQUEST_DELAY)
+        try:
+            patient_record = await b.ExtractPatientRecord(record["note"])
+            result = patient_record.model_dump()
 
-    try:
-        patient_result, practitioner_result, immunization_result = await asyncio.gather(*tasks)
+            patient = result.get("patient") or {}
+            patient["record_id"] = record["record_id"]
+            if patient.get("maritalStatus"):
+                patient["maritalStatus"] = patient["maritalStatus"].value
+            result["patient"] = patient
 
-        # Create the desired JSON structure
-        result = {
-            "patient": patient_result,
-            "practitioner": practitioner_result
-            if practitioner_result
-            and not all(all(v is None for v in item.values()) for item in practitioner_result)
-            else None,
-            "immunization": immunization_result
-            if not all(v is None for v in immunization_result)
-            else None,
-        }
+            practitioner = result.get("practitioner")
+            if practitioner and all(all(v is None for v in item.values()) for item in practitioner):
+                result["practitioner"] = None
 
-        return result
-    except Exception as e:
-        print(f"❌ Error processing record {record['record_id']}: {e}")
-        # Return basic structure with record_id on error
-        return {
-            "patient": {"record_id": record["record_id"], "error": str(e)},
-            "practitioner": None,
-            "immunization": None,
-        }
+            immunization = result.get("immunization")
+            if immunization and all(all(v is None for v in item.values()) for item in immunization):
+                result["immunization"] = None
+
+            print(f"✓ Extracted combined patient record for record {record['record_id']}")
+            return result
+        except Exception as e:
+            print(f"❌ Error processing record {record['record_id']}: {e}")
+            # Return basic structure with record_id on error
+            return {
+                "patient": {"record_id": record["record_id"], "error": str(e)},
+                "practitioner": None,
+                "immunization": None,
+            }
 
 
 async def extract(records: List[Dict[str, str]]) -> List[Dict[str, Any]]:

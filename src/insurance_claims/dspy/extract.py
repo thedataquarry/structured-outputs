@@ -23,18 +23,18 @@ lm = dspy.LM(
     model="openrouter/google/gemini-3-flash-preview",
     api_base="https://openrouter.ai/api/v1",
     api_key=os.environ["OPENROUTER_API_KEY"],
-    max_tokens=10_000,  # Max output tokens
+    cache=False,
 )
 dspy.configure(lm=lm, adapter=BAMLAdapter())
 
 
 class InsuranceClaimInfo(dspy.Signature):
     """
-    - Do not infer any information that is not explicitly mentioned in the text.
-    - If you are unsure about any field, leave it as None.
+    Extract the insurance claim information from the following text.
+    - If you are unsure about a field, leave it as null.
     """
 
-    claim_text: str = dspy.InputField(desc="Insurance claim text")
+    claim_text: str = dspy.InputField()
     claim: InsuranceClaim = dspy.OutputField()
 
 
