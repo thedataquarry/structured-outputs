@@ -11,8 +11,8 @@ from typing import Any, Literal
 
 import dspy
 import polars as pl
-from dspy.adapters.baml_adapter import BAMLAdapter
 from dotenv import load_dotenv
+from dspy.adapters.baml_adapter import BAMLAdapter
 from pydantic import BaseModel, Field
 
 load_dotenv()
@@ -38,9 +38,7 @@ class PersonNameAndTitle(BaseModel):
         default=None,
         description="Given name(s) of the patient",
     )
-    prefix: str | None = Field(
-        default=None, description="Title of the patient"
-    )
+    prefix: str | None = Field(default=None, description="Title of the patient")
 
 
 class Address(BaseModel):
@@ -66,7 +64,9 @@ class Immunization(BaseModel):
         description="Substances or vaccine components mentioned in the immunization",
     )
     status: Literal["completed"] | None
-    occurrenceDate: str | None = Field(description="ISO-8601 format for datetime including timezone")
+    occurrenceDate: str | None = Field(
+        description="ISO-8601 format for datetime including timezone"
+    )
 
 
 class Substance(BaseModel):
@@ -78,7 +78,9 @@ class Substance(BaseModel):
 
 
 class Allergy(BaseModel):
-    substance: list[Substance] | None = Field(description="The substance that the patient is allergic to")
+    substance: list[Substance] | None = Field(
+        description="The substance that the patient is allergic to"
+    )
 
 
 class Patient(BaseModel):

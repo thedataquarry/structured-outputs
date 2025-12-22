@@ -5,8 +5,8 @@ This section contains code for getting structured outputs using BAML.
 ## Usage
 
 ```bash
-# Extract structured outputs for the first 200 patient notes
-uv run extract.py -e 200
+# Extract structured outputs for the first 100 patient notes
+uv run extract.py -e 100
 # Extract from all 2,726 patient notes
 uv run extract.py
 ```
