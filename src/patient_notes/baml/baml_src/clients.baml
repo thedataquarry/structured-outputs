@@ -6,77 +6,6 @@ client<llm> OpenRouterGPT4oMini {
     base_url "https://openrouter.ai/api/v1"
     api_key env.OPENROUTER_API_KEY
     model "openai/gpt-4o-mini"
-    temperature 0.0
-    headers {
-      "HTTP-Referer" "https://thedataquarry.com" // Optional
-      "X-Title" "Structured Outputs" // Optional
-    }
-  }
-}
-
-client<llm> OpenRouterGPT41Mini {
-  provider "openai-generic"
-  options {
-    base_url "https://openrouter.ai/api/v1"
-    api_key env.OPENROUTER_API_KEY
-    model "openai/gpt-4.1-mini"
-    temperature 0.0
-    headers {
-      "HTTP-Referer" "https://thedataquarry.com" // Optional
-      "X-Title" "Structured Outputs" // Optional
-    }
-  }
-}
-
-client<llm> OpenRouterGPT41Nano {
-  provider "openai-generic"
-  options {
-    base_url "https://openrouter.ai/api/v1"
-    api_key env.OPENROUTER_API_KEY
-    model "openai/gpt-4.1-nano"
-    temperature 0.0
-    headers {
-      "HTTP-Referer" "https://thedataquarry.com" // Optional
-      "X-Title" "Structured Outputs" // Optional
-    }
-  }
-}
-
-client<llm> OpenRouterGemma3_27b {
-  provider "openai-generic"
-  options {
-    base_url "https://openrouter.ai/api/v1"
-    api_key env.OPENROUTER_API_KEY
-    model "google/gemma-3-27b-it"
-    temperature 0.0
-    headers {
-      "HTTP-Referer" "https://thedataquarry.com" // Optional
-      "X-Title" "Structured Outputs" // Optional
-    }
-  }
-}
-
-client<llm> OpenRouterGemma3_4b {
-  provider "openai-generic"
-  options {
-    base_url "https://openrouter.ai/api/v1"
-    api_key env.OPENROUTER_API_KEY
-    model "google/gemma-3-4b-it"
-    temperature 0.0
-    headers {
-      "HTTP-Referer" "https://thedataquarry.com" // Optional
-      "X-Title" "Structured Outputs" // Optional
-    }
-  }
-}
-
-client<llm> OpenRouterGoogleGemini25Flash {
-  provider "openai-generic"
-  options {
-    base_url "https://openrouter.ai/api/v1"
-    api_key env.OPENROUTER_API_KEY
-    model "google/gemini-2.5-flash"
-    temperature 0.0
     headers {
       "HTTP-Referer" "https://thedataquarry.com" // Optional
       "X-Title" "Structured Outputs" // Optional
@@ -91,21 +20,6 @@ client<llm> OpenRouterGoogleGemini2Flash {
     base_url "https://openrouter.ai/api/v1"
     api_key env.OPENROUTER_API_KEY
     model "google/gemini-2.0-flash-001"
-    temperature 0.0
-    headers {
-      "HTTP-Referer" "https://thedataquarry.com" // Optional
-      "X-Title" "Structured Outputs" // Optional
-    }
-  }
-}
-
-client<llm> OpenRouterMistralDevstralMedium {
-  provider "openai-generic"
-  options {
-    base_url "https://openrouter.ai/api/v1"
-    api_key env.OPENROUTER_API_KEY
-    model "mistralai/devstral-medium"
-    temperature 0.0
     headers {
       "HTTP-Referer" "https://thedataquarry.com" // Optional
       "X-Title" "Structured Outputs" // Optional

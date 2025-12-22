@@ -41,6 +41,7 @@ class Practitioner {
 
 class Immunization {
     traits string[]? @alias("vaccineTraits") @description("Text describing the name and traits of the immunization")
+    substances string[]? @description("Substances or vaccine components mentioned in the immunization")
     status "completed" | null
     occurrenceDateTime string?  @description("ISO-8601 format for datetime including timezone")
 }
@@ -53,6 +54,12 @@ class Substance {
 
 class Allergy {
     substance Substance[] | null @description("The substance that the patient is allergic to")
+}
+
+class PatientRecord {
+  patient Patient | null
+  practitioner Practitioner[]?
+  immunization Immunization[]?
 }
 
 // --- Functions ---
@@ -91,6 +98,21 @@ function ExtractImmunization(record: string) -> Immunization[] {
   client OpenRouterGoogleGemini2Flash
   prompt #"
     Extract immunization information from the given note.
+    - Do not infer any information that is not explicitly mentioned in the text.
+    - If you are unsure about any field, leave it as None.
+
+    {{ ctx.output_format }}
+
+    {{ _.role('user') }}
+
+    {{ record }}
+  "#
+}
+
+function ExtractPatientRecord(record: string) -> PatientRecord {
+  client OpenRouterGoogleGemini2Flash
+  prompt #"
+    Extract patient, practitioner, and immunization information from the given note.
     - Do not infer any information that is not explicitly mentioned in the text.
     - If you are unsure about any field, leave it as None.
 
