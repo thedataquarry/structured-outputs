@@ -53,7 +53,7 @@ are also shown.
 | `openai/gpt-4.1` | 84.3% | 84.4% | 86.6% |
 | `openai/gpt-5.2` | 87.5% | 86.5% | 87.6% |
 
-Smallerm, cheaper models tend to do better with BAML, whereas the larger, more capable (and more
+Smaller, cheaper models tend to do better with BAML, whereas the larger, more capable (and more
 recent models) tend to do better with DSPy and `BAMLAdapter`. This is likely because
 as the models get better, they are better able to understand the instructions and keep track
 of them while handling DSPy's more verbose structured prompts. Smaller models struggle to

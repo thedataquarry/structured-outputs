@@ -33,7 +33,7 @@ are also shown.
 | `mistralai/ministral-14b-2512` | 95.8% | 96.3% | ❌ |
 | `google/gemini-2.0-flash-001` | 96.4% | 96.6% | 96.3% |
 | `google/gemini-3-flash-preview` | 96.7% | **97.9%** | 96.9% |
-| `openai/gpt-4.1` | **97.1%** | 97.4% | **97.4%** |
+| `openai/gpt-4.1` | 97.1% | 97.4% | 97.4% |
 | `openai/gpt-5.2` | 96.7% | 97.5% | 97.3% |
 
 In these results, interestingly, DSPy-default (based on the `ChatAdapter`) does the best among all
