@@ -32,9 +32,9 @@ are also shown.
 |-------|---|-------------------:|-------------------:|
 | `mistralai/ministral-14b-2512` | 86.7% | 82.9% | 87.0% |
 | `google/gemini-2.0-flash-001` | 85.7% | 85.5% | 86.8% |
-| `google/gemini-3-flash-preview` | **86.1%** | 83.8% | 87.7% |
+| `google/gemini-3-flash-preview` | 86.1% | 83.8% | 87.7% |
 | `openai/gpt-4.1` | 84.3% | 86.9% | 89.8% |
-| `openai/gpt-5.2` | **86.1%** | 85.8% | **91.8%** |
+| `openai/gpt-5.2` | 86.1% | 85.8% | **91.8%** |
 
 BAML performs better than DSPy-default, which uses `JSONAdapter` or `ChatAdapter`. However, when we pass
 use the `BAMLAdapter` in DSPy to pass in the BAML schema format to DSPy's generated prompt,

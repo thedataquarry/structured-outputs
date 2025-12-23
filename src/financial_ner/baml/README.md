@@ -32,11 +32,11 @@ are also shown.
 |-------|---|-------------------:|-------------------:|
 | `mistralai/ministral-14b-2512` | 88.7% | 85.8% | 84.8% |
 | `google/gemini-2.0-flash-001` | 89.2% | 88.5 | 87.4% |
-| `google/gemini-3-flash-preview` | **90.3%** | **90.7%** | **90.8%** |
+| `google/gemini-3-flash-preview` | 90.3% | 90.7% | **90.8%** |
 | `openai/gpt-4.1` | 84.3% | 84.4% | 86.6% |
 | `openai/gpt-5.2` | 87.5% | 86.5% | 87.6% |
 
-Smallerm, cheaper models tend to do better with BAML, whereas the larger, more capable (and more
+Smaller, cheaper models tend to do better with BAML, whereas the larger, more capable (and more
 recent models) tend to do better with DSPy and `BAMLAdapter`. This is likely because
 as the models get better, they are better able to understand the instructions and keep track
 of them while handling DSPy's more verbose structured prompts. Smaller models struggle to
