@@ -52,7 +52,6 @@ against the gold standard. It's clear that the BAML adapter significantly improv
 | `google/gemini-2.0-flash-001` | 96.3% | 87.6% | 96.6%x |
 | `google/gemini-3-flash-preview` | 96.3% | 93.1% | 95.1% |
 | `openai/gpt-4.1` | **97.4%** | **95.6%** | **96.8%** |
-| `openai/gpt-5-mini` | 96.1% | ❌ | 95.8% |
 | `openai/gpt-5.2` | 96.8% | 97.0% | 96.5% |
 
 > [!NOTE]
