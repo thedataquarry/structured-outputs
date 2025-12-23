@@ -10,7 +10,7 @@ parser.add_argument("--index", "-i", type=int, default=1, help="Record index to 
 args = parser.parse_args()
 INDEX_ID = args.index
 
-with open("./data/note.json", "r") as f:
+with open("note.json", "r") as f:
     notes = json.load(f)
 
 # pprint(result_data[INDEX_ID - 1])
