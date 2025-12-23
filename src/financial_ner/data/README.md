@@ -7,7 +7,7 @@ Field | Description
 Source URL | Business and financial text from [Hugging Face datasets](https://huggingface.co/datasets/Cleanlab/fire-financial-ner-extraction)
 Input format | Parquet
 Output format | Nested JSON
-Number of records | 100
+Number of records | 2,117
 
 The raw data is from the Cleanlab
 [structured outputs benchmarks](https://github.com/cleanlab/structured-output-benchmark) repo.

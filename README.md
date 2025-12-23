@@ -15,7 +15,7 @@ Cleanlab [structured output benchmarks](https://github.com/cleanlab/structured-o
 Dataset | Task | Source | Input | Output | Records | Notes
 --- | --- | --- | --- | --- | --- | ---
 Patient notes | Extract structured fields from unstructured patient notes | [FHIR patient records](https://huggingface.co/datasets/kishanbodybrain/test-fhir/tree/main/data) | Plain text | Nested JSON | 2,726 | Gold data derived from `data/raw_fhir.json` to `gold.json`
-Financial entities | Extract financial and contextual entities from business text | [Cleanlab fire-financial-ner-extraction](https://huggingface.co/datasets/Cleanlab/fire-financial-ner-extraction) | Parquet | Nested JSON | 100 | From Cleanlab structured outputs benchmark
+Financial entities | Extract financial and contextual entities from business text | [Cleanlab fire-financial-ner-extraction](https://huggingface.co/datasets/Cleanlab/fire-financial-ner-extraction) | Parquet | Nested JSON | 2,117 | From Cleanlab structured outputs benchmark
 Insurance claims | Extract structured fields from insurance claim records | [Cleanlab insurance-claims-extraction](https://huggingface.co/datasets/Cleanlab/insurance-claims-extraction) | Parquet | Nested JSON | 30 | From Cleanlab structured outputs benchmark
 PII | Extract and classify PII from unstructured text | [Cleanlab pii-extraction](https://huggingface.co/datasets/Cleanlab/pii-extraction) | Parquet | Nested JSON | 100 | From Cleanlab structured outputs benchmark
 
