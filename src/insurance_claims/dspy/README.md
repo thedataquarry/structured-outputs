@@ -50,7 +50,6 @@ against the gold standard. It's clear that the BAML adapter significantly improv
 | `google/gemini-2.0-flash-001` | 85.7% | 85.5% | 86.8% |
 | `google/gemini-3-flash-preview` | **86.1%** | 83.8% | 87.7% |
 | `openai/gpt-4.1` | 84.3% | 86.9% | 89.8% |
-| `openai/gpt-5-mini` | 86.0% | 85.8% | 88.5% |
 | `openai/gpt-5.2` | **86.1%** | 85.8% | **91.8%** |
 
 BAML performs better than DSPy-default, which uses `JSONAdapter` or `ChatAdapter`. However, when we pass

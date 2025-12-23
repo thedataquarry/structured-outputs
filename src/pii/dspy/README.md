@@ -5,7 +5,7 @@ This section contains code for getting structured outputs using DSPy with `BAMLA
 ## Usage
 
 ```bash
-# Extract structured outputs for all 30 records
+# Extract structured outputs for all 100 PII extraction records
 uv run extract.py
 ```
 
@@ -40,27 +40,25 @@ uv run evaluate.py
 
 ## Results
 
-Experiments were run for several LMs, with and without the BAML adapter. The numbers below represent
+The numbers below represent
 the percentage of total exact matches from the evaluation script, comparing the structured outputs
-against the gold standard. It's clear that the BAML adapter significantly improves the results across all models.
+against the gold standard. For comparison, the results from DSPy using the BAML adapter
+are also shown.
 
 | Model | BAML | DSPy w/ JSON schema | DSPy w/ BAML Adapter |
 |-------|---|-------------------:|-------------------:|
-| `mistralai/ministral-14b-2512` | 86.7% | 82.9% | 87.0% |
-| `google/gemini-2.0-flash-001` | 85.7% | 85.5% | 86.8% |
-| `google/gemini-3-flash-preview` | **86.1%** | 83.8% | 87.7% |
-| `openai/gpt-4.1` | 84.3% | 86.9% | 89.8% |
-| `openai/gpt-5-mini` | 86.0% | 85.8% | 88.5% |
-| `openai/gpt-5.2` | **86.1%** | 85.8% | **91.8%** |
+| `mistralai/ministral-14b-2512` | 95.8% | 96.3% | ❌ |
+| `google/gemini-2.0-flash-001` | 96.4% | 96.6% | 96.3% |
+| `google/gemini-3-flash-preview` | 96.7% | **97.9%** | 96.9% |
+| `openai/gpt-4.1` | **97.1%** | 97.4% | **97.4%** |
+| `openai/gpt-5.2` | 96.7% | 97.5% | 97.3% |
 
-BAML performs better than DSPy-default, which uses `JSONAdapter` or `ChatAdapter`. However, when we pass
-use the `BAMLAdapter` in DSPy to pass in the BAML schema format to DSPy's generated prompt,
-we see DSPy's performance on par with (or better than) BAML's on most counts.
-
-The performance gains from using the BAML adapter in DSPy come for *free* - all it does is translate
-the nested Pydantic types from the signature to a more token-efficient and concise schema representation,
-which is then passed to the auto-generated prompt to the LM. This allows the LM to focus on the schema at
-hand and adhere to it during generation.
+In these results, interestingly, DSPy-default (based on the `ChatAdapter`) does the best among all
+three approaches. Because the JSON structure being modeled is rather flat, long, and sparse, it
+seems like the combination of the structured prompting strategy of DSPy + clearly defined JSON
+schema give all models the context they need. In BAML's and the `BAMLAdapter` + DSPy case, the
+benefits aren't as apparent because the models are able to handle the flat (single-level nested)
+JSON easily enough using JSON schema.
 
 ### Example results
 

@@ -5,7 +5,7 @@ This section contains code for getting structured outputs using BAML.
 ## Usage
 
 ```bash
-# Extract structured outputs for all 30 insurance claims records
+# Extract structured outputs for all 100 PII extraction records
 uv run extract.py
 ```
 
